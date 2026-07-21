@@ -361,20 +361,21 @@ if (isLogin) {
 // selain itu → D
 // Uji dengan nilai 90, 80, 70, dan 50.
 function hitungGrade(siswa, nilai) {
-  console.log(siswa);
-    if (nilai >= 85) {
-    console.log("A")
+  console.log(siswa, "→ nilai:", nilai);
+  if (nilai >= 85) {
+    console.log("A");
   } else if (nilai >= 75) {
-    console.log("B")
+    console.log("B");
   } else if (nilai >= 65) {
-    console.log("C")
+    console.log("C");
   } else {
-    console.log("D")
-    }
+    console.log("D");
+  }
 }
-hitungGrade("Siswa A");
-nilai = 60
-hitungGrade("Siswa B")
+hitungGrade("Siswa A", 90);
+hitungGrade("Siswa B", 80);
+hitungGrade("Siswa C", 70);
+hitungGrade("Siswa D", 50);
 
 // Latihan 8
 // Buat cek diskon belanja:
@@ -520,11 +521,11 @@ function atm(customer, saldo, pinBenar, jumlahTarik) {
   let sisaSaldo;
   if (pinBenar) {
     console.log("PIN anda benar")
-    if (jumlahTarik < saldo) {
+    if (jumlahTarik <= saldo) {
       sisaSaldo = saldo - jumlahTarik;
-      console.log(`Penarikan Rp${jumlahTarik} berhasil sisa saldo Rp${sisaSaldo}`);
+      console.log(`Penarikan Rp${jumlahTarik} berhasil. Sisa saldo Rp${sisaSaldo}`);
     } else {
-      console.log(`Saldo tidak cukup, jumlah saldo anda Rp${saldo}`);
+      console.log(`Saldo tidak cukup. Saldo anda Rp${saldo}`);
     }
   }
   else{
@@ -583,6 +584,31 @@ function penilaianKaryawanIfElse(karyawan, absen) {
   console.log(`Karyawan ${karyawan}, dengan status ${status}, mendapatkan bonus Rp${bonus}`);
 }
 penilaianKaryawanIfElse("A", 0);
+
+// Versi switch sesuai soal: nilai status tetap (string)
+function bonusByStatusSwitch(karyawan, status) {
+  let bonus;
+  switch (status) {
+    case "excellent":
+      bonus = 1000000;
+      break;
+    case "good":
+      bonus = 500000;
+      break;
+    case "average":
+      bonus = 250000;
+      break;
+    case "poor":
+      bonus = 0;
+      break;
+    default:
+      console.log("Status tidak dikenal");
+      return;
+  }
+  console.log(`Karyawan ${karyawan} (${status}) mendapat bonus Rp${bonus}`);
+}
+bonusByStatusSwitch("B", "good");
+
 /*
 KAPAN SWITCH CASE LEBIH ENAK DIPAKAI?
 1. Nilai Pasti (Exact Value):
@@ -639,37 +665,35 @@ function sistemPendaftaran(nama, umur, nilaiTes, sudahBayar) {
   let statusNilai;
   let statusBayar;
   let keputusan;
-  let alasan
+  let alasan;
+
   if (umur >= 15) {
     statusUmur = "LOLOS";
   } else {
-    statusUmur = "GAGAl";
-  };
+    statusUmur = "GAGAL";
+  }
   if (nilaiTes >= 70) {
     statusNilai = "LOLOS";
   } else {
     statusNilai = "GAGAL";
-  };
+  }
   if (sudahBayar) {
     statusBayar = "LOLOS";
   } else {
     statusBayar = "GAGAL";
   }
+
   if (statusUmur === "LOLOS" && statusNilai === "LOLOS" && statusBayar === "LOLOS") {
     keputusan = "DITERIMA";
-  } else if (statusUmur === "GAGAL" && statusNilai === "LOLOS" && statusBayar === "LOLOS") {
-    keputusan = "DITOLAK"
-    alasan = "Anda dibawah umur";
-  } else if (statusUmur === "LOLOS" && statusNilai === "GAGAL" && statusBayar === "LOLOS") {
-    keputusan = "DITOLAK"
-    alasan = "Nilai anda di bawah rata rata";
-  } else if (statusUmur === "LOLOS" && statusNilai === "LOLOS" && statusBayar === "GAGAL") {
-    keputusan = "DITOLAK"
-    alasan = "Anda belum membayar";
+    alasan = "Semua syarat terpenuhi";
   } else {
-    keputusan = "DITOLAK"
-    alasan = "Anda tidak menyelesaikan syarat sama sekali";
-  };
+    keputusan = "DITOLAK";
+    let gagal = [];
+    if (statusUmur === "GAGAL") gagal.push("umur kurang dari 15");
+    if (statusNilai === "GAGAL") gagal.push("nilai tes di bawah 70");
+    if (statusBayar === "GAGAL") gagal.push("belum membayar");
+    alasan = gagal.join(", ");
+  }
   console.log("=======================================");
   console.log("       HASIL PENDAFTARAN KURSUS        ");
   console.log("=======================================");
@@ -699,4 +723,5 @@ function sistemPendaftaran(nama, umur, nilaiTes, sudahBayar) {
   // Alasan      : ...   ← jelaskan syarat mana yang gagal (jika ditolak)
   // ========================================
 }
-sistemPendaftaran("kay", 21, 90, false);
+sistemPendaftaran("Kay", 21, 90, false);  // ditolak: belum bayar
+sistemPendaftaran("Rifki", 18, 85, true); // diterima
