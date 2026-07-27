@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading State</title>
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; margin: 0; padding: 2rem; background: #f8fafc; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
+        h1 { margin-top: 0; }
+        h2 { margin-top: 1.5rem; }
+        code, pre { background: #e2e8f0; padding: 0.15rem 0.35rem; border-radius: 0.3rem; }
+        pre { display: block; padding: 1rem; overflow-x: auto; }
+        a { color: #2563eb; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Loading State</h1>
+        <p>Loading state memberi feedback kepada pengguna saat proses sedang berjalan, misalnya saat mengambil data dari server.</p>
+        <h2>Yang dipelajari</h2>
+        <ul>
+            <li>Memperbarui teks atau UI saat proses dimulai.</li>
+            <li>Menggunakan <code>setTimeout()</code> atau async untuk simulasi proses.</li>
+            <li>Memberi tampilan yang lebih nyaman saat data belum selesai.</li>
+        </ul>
+        <h2>Contoh dasar</h2>
+        <pre><code>status.textContent = 'Memuat...';
+setTimeout(() => {
+  status.textContent = 'Selesai';
+}, 1000);</code></pre>
+        <p><a href="JS_22_Loading_State_Latihan.html">Lihat latihan untuk materi ini</a></p>
+    
+    <!-- MODUL-PEMULA-REVISI -->
+    <section style="margin-top: 2rem; padding: 1.4rem; border: 1px solid #dbeafe; border-radius: 1rem; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);">
+        <h2 style="margin-top: 0; color: #1d4ed8;">Belajar Mandiri: Loading state</h2>
+        <p style="margin-top: 0.3rem;">Loading state membuat aplikasi terasa lebih profesional.</p>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Tujuan Pembelajaran</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Menampilkan status loading</li><li>Membuat UX yang lebih nyaman</li><li>Mengelola keadaan sementara</li></ul>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Kenapa Materi Ini Penting</h3>
+                <p style="margin: 0;">Tanpa loading state, user bisa mengira aplikasi macet.</p>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Penjelasan Konsep</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Loading biasanya tampil saat proses dimulai</li><li>State diubah menjadi selesai saat data datang</li><li>Feedback visual sangat penting</li></ul>
+            </div>
+        </div>
+        <h3 style="margin-top: 1rem;">Contoh Dasar</h3>
+        <pre><code>let loading = true;
+setTimeout(() =&gt; {
+  loading = false;
+  console.log(&#x27;Selesai&#x27;);
+}, 1000);</code></pre>
+        <h3>Contoh Kasus Nyata</h3>
+        <p>Bayangkan kamu sedang mengolah data mahasiswa, daftar belanja, catatan tugas, atau hasil pencarian film. Materi ini membantu kamu mengubah data tersebut menjadi antarmuka yang lebih berguna.</p>
+        <h3>Cara Membaca Kode</h3>
+        <ol><li>Baris ini membuat status loading awal.</li><li>Baris ini mengubah status setelah satu detik.</li><li>Output yang diharapkan adalah selesai setelah delay.</li></ol>
+        <h3>Kesalahan Umum</h3>
+        <ul><li>Tidak memberi feedback sama sekali</li><li>Mengubah state terlalu cepat atau terlalu lambat</li><li>Tidak menghapus loading saat selesai</li></ul>
+        <h3>Tips Debugging</h3>
+        <ul><li>Pakai loading untuk operasi yang butuh waktu</li><li>Tampilkan pesan kosong saat data tidak ada</li><li>Jangan lupa hilangkan loading saat selesai</li></ul>
+        <h3>Latihan Mandiri</h3>
+        <p>Buat indikator loading sederhana saat menunggu 2 detik.</p>
+        <h3>Mini Challenge</h3>
+        <p>Tampilkan pesan sukses setelah data selesai dimuat.</p>
+        <h3>Ringkasan</h3>
+        <p>Loading state membuat aplikasi terasa lebih profesional.</p>
+        <h3>Lanjut Belajar Setelah Materi Ini</h3>
+        <p>Lanjut ke module JavaScript.</p>
+        <h3>Prediksi Output</h3>
+        <p>Coba tebak hasilnya sebelum melihat jawaban. Kalau kamu belum yakin, jalankan di console browser.</p>
+        <pre><code>let loading = true;
+setTimeout(() =&gt; {
+  loading = false;
+  console.log(&#x27;Selesai&#x27;);
+}, 1000);</code></pre>
+    </section>
+    
+</main>
+</body>
+</html>

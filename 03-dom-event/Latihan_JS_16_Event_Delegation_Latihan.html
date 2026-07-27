@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Event Delegation</title>
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; margin: 0; padding: 2rem; background: #f8fafc; color: #0f172a; }
+        main { max-width: 800px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
+        h1 { margin-top: 0; }
+        button { margin: 0.25rem; padding: 0.5rem 0.8rem; }
+        code { background: #e2e8f0; padding: 0.15rem 0.35rem; border-radius: 0.3rem; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Latihan Event Delegation</h1>
+        <p>Klik tombol di bawah. Lihat hasil di Console.</p>
+
+        <div id="daftar-tombol">
+            <button data-id="1">Tombol 1</button>
+            <button data-id="2">Tombol 2</button>
+            <button data-id="3">Tombol 3</button>
+        </div>
+
+        <script>
+            const daftarTombol = document.getElementById("daftar-tombol");
+            daftarTombol.addEventListener("click", (event) => {
+                if (event.target.matches("button")) {
+                    console.log("Tombol diklik:", event.target.dataset.id);
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>

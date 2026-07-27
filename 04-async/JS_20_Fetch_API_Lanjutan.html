@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Lanjutan</title>
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; margin: 0; padding: 2rem; background: #f8fafc; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
+        h1 { margin-top: 0; }
+        h2 { margin-top: 1.5rem; }
+        code, pre { background: #e2e8f0; padding: 0.15rem 0.35rem; border-radius: 0.3rem; }
+        pre { display: block; padding: 1rem; overflow-x: auto; }
+        a { color: #2563eb; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Fetch API Lanjutan</h1>
+        <p>Fetch API digunakan untuk mengambil data dari server atau layanan API secara asynchronous.</p>
+        <h2>Yang dipelajari</h2>
+        <ul>
+            <li><code>fetch()</code> untuk mengirim request.</li>
+            <li><code>response.json()</code> untuk mengubah respons menjadi object.</li>
+            <li><code>catch()</code> untuk menangani error.</li>
+        </ul>
+        <h2>Contoh dasar</h2>
+        <pre><code>fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(res => res.json())
+  .then(data => console.log(data));</code></pre>
+        <p><a href="Latihan_JS_20_Fetch_API_Lanjutan.html">Lihat latihan untuk materi ini</a></p>
+    
+    <!-- MODUL-PEMULA-REVISI -->
+    <section style="margin-top: 2rem; padding: 1.4rem; border: 1px solid #dbeafe; border-radius: 1rem; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);">
+        <h2 style="margin-top: 0; color: #1d4ed8;">Belajar Mandiri: Fetch API lanjutan</h2>
+        <p style="margin-top: 0.3rem;">Fetch API adalah fondasi interaksi data modern.</p>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Tujuan Pembelajaran</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Menggunakan fetch dengan data lebih kompleks</li><li>Memahami method GET dan POST</li><li>Membuat request yang lebih profesional</li></ul>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Kenapa Materi Ini Penting</h3>
+                <p style="margin: 0;">Aplikasi modern sering mengirim dan menerima data dari backend. Fetch adalah alat utama untuk itu.</p>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Penjelasan Konsep</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>GET untuk membaca data</li><li>POST untuk mengirim data</li><li>Header dan body penting saat request kompleks</li></ul>
+            </div>
+        </div>
+        <h3 style="margin-top: 1rem;">Contoh Dasar</h3>
+        <pre><code>fetch(&#x27;https://jsonplaceholder.typicode.com/posts&#x27;, {
+  method: &#x27;POST&#x27;,
+  headers: { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
+  body: JSON.stringify({ title: &#x27;Belajar fetch&#x27; })
+});</code></pre>
+        <h3>Contoh Kasus Nyata</h3>
+        <p>Bayangkan kamu sedang mengolah data mahasiswa, daftar belanja, catatan tugas, atau hasil pencarian film. Materi ini membantu kamu mengubah data tersebut menjadi antarmuka yang lebih berguna.</p>
+        <h3>Cara Membaca Kode</h3>
+        <ol><li>Baris ini mengirim request POST.</li><li>Baris ini memberi tahu server format datanya.</li><li>Output yang diharapkan adalah response dari server setelah request dikirim.</li></ol>
+        <h3>Kesalahan Umum</h3>
+        <ul><li>Lupa mengirim header</li><li>Tidak menangani response yang gagal</li><li>Menganggap semua API bisa dipakai tanpa batas</li></ul>
+        <h3>Tips Debugging</h3>
+        <ul><li>Periksa dokumentasi API</li><li>Cek status response</li><li>Buat kode fallback saat request gagal</li></ul>
+        <h3>Latihan Mandiri</h3>
+        <p>Buat request GET ke API sederhana dan tampilkan hasilnya.</p>
+        <h3>Mini Challenge</h3>
+        <p>Buat form yang mengirim data ke endpoint dummy.</p>
+        <h3>Ringkasan</h3>
+        <p>Fetch API adalah fondasi interaksi data modern.</p>
+        <h3>Lanjut Belajar Setelah Materi Ini</h3>
+        <p>Lanjut ke error handling.</p>
+        <h3>Prediksi Output</h3>
+        <p>Coba tebak hasilnya sebelum melihat jawaban. Kalau kamu belum yakin, jalankan di console browser.</p>
+        <pre><code>fetch(&#x27;https://jsonplaceholder.typicode.com/posts&#x27;, {
+  method: &#x27;POST&#x27;,
+  headers: { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
+  body: JSON.stringify({ title: &#x27;Belajar fetch&#x27; })
+});</code></pre>
+    </section>
+    
+</main>
+</body>
+</html>

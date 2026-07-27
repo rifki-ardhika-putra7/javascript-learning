@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 9: Asynchronous, Promise, Fetch</title>
+    <style>
+        body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #f8fafc; color: #0f172a; }
+        .page { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        h1 { color: #1d4ed8; }
+        .card { background: white; border-radius: 1rem; border: 1px solid #cbd5e1; padding: 1.5rem; box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08); }
+        pre { background: #e2e8f0; border-radius: 0.85rem; padding: 1rem; overflow-x: auto; }
+        a { color: #2563eb; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <h1>JS 9: Asynchronous, Promise, Fetch</h1>
+        <p>Asynchronous membuat JavaScript bisa menjalankan tugas di latar belakang tanpa menghentikan halaman.</p>
+        <div class="card">
+            <h2><code>setTimeout</code></h2>
+            <pre><code>console.log('Mulai');
+setTimeout(() => {
+  console.log('Tertunda 2 detik');
+}, 2000);
+console.log('Selesai');</code></pre>
+        </div>
+        <div class="card" style="margin-top: 1rem;">
+            <h2>Promise</h2>
+            <pre><code>const janji = new Promise((resolve, reject) => {
+  const sukses = true;
+  if (sukses) {
+    resolve('Berhasil');
+  } else {
+    reject('Gagal');
+  }
+});
+
+janji
+  .then(data => console.log(data))
+  .catch(err => console.error(err));</code></pre>
+        </div>
+        <div class="card" style="margin-top: 1rem;">
+            <h2>Async/Await dan Fetch</h2>
+            <pre><code>async function ambilData() {
+  try {
+    const respons = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const data = await respons.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+ambilData();</code></pre>
+        </div>
+        <p style="margin-top: 1.5rem;"><a href="JS_00_Daftar_Materi.html">← Kembali ke daftar materi</a></p>
+    
+    <!-- MODUL-PEMULA-REVISI -->
+    <section style="margin-top: 2rem; padding: 1.4rem; border: 1px solid #dbeafe; border-radius: 1rem; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);">
+        <h2 style="margin-top: 0; color: #1d4ed8;">Belajar Mandiri: Asynchronous, promise, dan fetch</h2>
+        <p style="margin-top: 0.3rem;">Async membantu aplikasi tetap responsif saat menunggu data.</p>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Tujuan Pembelajaran</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Memahami konsep asynchronous</li><li>Menggunakan promise</li><li>Membuat request dengan fetch</li></ul>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Kenapa Materi Ini Penting</h3>
+                <p style="margin: 0;">Banyak aplikasi modern bergantung pada data dari internet. Kita perlu tahu cara menangani waktu tunggu.</p>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Penjelasan Konsep</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Kode async tidak selalu berjalan lurus</li><li>Promise mewakili proses yang belum selesai</li><li>fetch mengambil data dari API</li></ul>
+            </div>
+        </div>
+        <h3 style="margin-top: 1rem;">Contoh Dasar</h3>
+        <pre><code>fetch(&#x27;https://jsonplaceholder.typicode.com/posts/1&#x27;)
+  .then(res =&gt; res.json())
+  .then(data =&gt; console.log(data.title));</code></pre>
+        <h3>Contoh Kasus Nyata</h3>
+        <p>Bayangkan kamu sedang mengolah data mahasiswa, daftar belanja, catatan tugas, atau hasil pencarian film. Materi ini membantu kamu mengubah data tersebut menjadi antarmuka yang lebih berguna.</p>
+        <h3>Cara Membaca Kode</h3>
+        <ol><li>Baris ini memulai request ke API.</li><li>Baris ini mengubah respons menjadi format JSON.</li><li>Output yang diharapkan adalah judul postingan dari API.</li></ol>
+        <h3>Kesalahan Umum</h3>
+        <ul><li>Menganggap fetch langsung memberikan data siap pakai</li><li>Lupa menangani error</li><li>Membuat banyak request tanpa perlu</li></ul>
+        <h3>Tips Debugging</h3>
+        <ul><li>Gunakan async/await untuk kode yang lebih rapi</li><li>Selalu cek status respons</li><li>Tampilkan loading saat data sedang diambil</li></ul>
+        <h3>Latihan Mandiri</h3>
+        <p>Ambil data dari API sederhana lalu tampilkan di halaman.</p>
+        <h3>Mini Challenge</h3>
+        <p>Buat kartu produk dari data API.</p>
+        <h3>Ringkasan</h3>
+        <p>Async membantu aplikasi tetap responsif saat menunggu data.</p>
+        <h3>Lanjut Belajar Setelah Materi Ini</h3>
+        <p>Lanjut ke proyek form.</p>
+        <h3>Prediksi Output</h3>
+        <p>Coba tebak hasilnya sebelum melihat jawaban. Kalau kamu belum yakin, jalankan di console browser.</p>
+        <pre><code>fetch(&#x27;https://jsonplaceholder.typicode.com/posts/1&#x27;)
+  .then(res =&gt; res.json())
+  .then(data =&gt; console.log(data.title));</code></pre>
+    </section>
+    
+</main>
+</body>
+</html>

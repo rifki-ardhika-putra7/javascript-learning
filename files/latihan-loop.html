@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Fokus: Loop</title>
+</head>
+
+<body>
+    <h1>Latihan Fokus: Loop</h1>
+    <p>Buka Console (F12). Tulis semua kodemu di &lt;script&gt; paling bawah, urut dari TODO 1.</p>
+
+    <h2>TODO 1 — for dasar (naik)</h2>
+    <p>Pakai <code>for</code>, cetak angka <b>1 sampai 10</b>, satu per baris.</p>
+
+    <h2>TODO 2 — for mundur (turun)</h2>
+    <p>Pakai <code>for</code>, cetak angka <b>10 sampai 1</b> (hitung mundur). Petunjuk: mulai dari 10, syarat
+        <code>i &gt;= 1</code>, pakai <code>i--</code>.</p>
+
+    <h2>TODO 3 — angka genap</h2>
+    <p>Cetak semua angka <b>genap</b> dari 2 sampai 20. Boleh pakai <code>i += 2</code>, atau loop biasa +
+        <code>if (i % 2 === 0)</code>.</p>
+
+    <h2>TODO 4 — akumulasi</h2>
+    <p>Hitung <b>TOTAL 1 + 2 + 3 + ... + 100</b> pakai pola <code>total += i</code>. Tampilkan hasilnya (harusnya 5050).
+    </p>
+
+    <h2>TODO 5 — counter + kondisi</h2>
+    <p>Diberi <code>const angka = [4, 7, 10, 3, 8, 15, 6]</code>. Pakai loop untuk <b>menghitung BERAPA BANYAK</b> angka
+        genap di dalamnya. Tampilkan jumlahnya (pakai pola counter <code>++</code>).</p>
+
+    <h2>TODO 6 — while</h2>
+    <p>Mulai <code>let saldo = 100000</code>. Selama <code>saldo &gt;= 15000</code>, kurangi <code>15000</code> tiap
+        putaran dan cetak sisa saldo. Di akhir, tampilkan berapa kali kamu bisa mengurangi (pakai counter). Petunjuk:
+        pakai <code>while</code>.</p>
+
+    <h2>TODO 7 — loop array + akumulasi</h2>
+    <p>Diberi <code>const belanja = [12000, 5000, 8000, 20000]</code>. Pakai loop (for atau for...of) untuk menghitung
+        <b>TOTAL belanja</b>, lalu tampilkan.</p>
+
+    <h2>TODO 8 (bonus) — nested loop</h2>
+    <p>Pakai loop <b>di dalam</b> loop untuk mencetak segitiga bintang seperti ini:</p>
+    <pre>*
+**
+***
+****
+*****</pre>
+    <p>Petunjuk: loop luar mengatur baris (1–5), loop dalam mencetak `*` sebanyak nomor baris.</p>
+
+    <script>
+        // Tulis semua jawabanmu di sini, urut dari TODO 1 sampai TODO 8
+        for (let i = 1; i <= 10; i++){
+            console.log(i);
+        }
+        for (let i = 10; i >= 1; i--){
+            console.log(i);
+        }
+        for (let i = 1; i <= 20; i++) {
+                if (i % 2 === 0) {
+                    console.log(i);
+                };
+            };
+        let total = 0;
+        for (let i = 1; i <= 100; i++){
+            total += i;
+        } 
+        console.log(total);
+
+        const angka = [4, 7, 10, 3, 8, 15, 6];
+            let totalGenap = 0;
+
+        for (let i = 0; i < angka.length; i++) 
+            if (angka[i] % 2 === 0) {
+                totalGenap++;   // tambah 1 tiap ketemu genap, apapun nilainya
+            }console.log(totalGenap);
+        
+            let saldo = 100000;
+                let counter = 0;
+
+                while (saldo >= 15000) {
+                    saldo -= 15000;
+                    counter++;
+
+                    console.log("Sisa saldo:", saldo);
+                }
+
+                console.log("Total bisa mengurangi:", counter, "kali");
+            const belanja = [12000, 5000, 8000, 20000];
+                let total2 = 0;
+
+                for (let i = 0; i < belanja.length; i++) {
+                    total2 += belanja[i];
+                }
+
+                console.log("Total belanja:", total2);
+
+            for (let baris = 1; baris <= 5; baris++) {
+                    let bintang = "";
+
+                    for (let kolom = 1; kolom <= baris; kolom++) {
+                        bintang += "*";
+                    }
+
+                    console.log(bintang);
+                }
+    </script>
+</body>
+
+</html>

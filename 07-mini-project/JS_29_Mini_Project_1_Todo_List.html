@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project 1: Todo List</title>
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; margin: 0; padding: 2rem; background: #f8fafc; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
+        h1 { margin-top: 0; }
+        h2 { margin-top: 1.5rem; }
+        code, pre { background: #e2e8f0; padding: 0.15rem 0.35rem; border-radius: 0.3rem; }
+        pre { display: block; padding: 1rem; overflow-x: auto; }
+        a { color: #2563eb; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Mini Project 1: Todo List</h1>
+        <p>Todo list adalah contoh proyek sederhana yang menggabungkan array, DOM, dan logika penghapusan item.</p>
+        <h2>Konsep yang diterapkan</h2>
+        <ul>
+            <li>Menyimpan daftar tugas dalam array.</li>
+            <li>Menambah dan menghapus item.</li>
+            <li>Menampilkan data ke halaman.</li>
+        </ul>
+        <h2>Contoh logika</h2>
+        <pre><code>todos.push('Belajar JavaScript');
+const sisa = todos.filter(item => item !== 'Belajar CSS');</code></pre>
+        <p><a href="JS_29_Mini_Project_1_Todo_List_Latihan.html">Lihat latihan untuk materi ini</a></p>
+    
+    <!-- MODUL-PEMULA-REVISI -->
+    <section style="margin-top: 2rem; padding: 1.4rem; border: 1px solid #dbeafe; border-radius: 1rem; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);">
+        <h2 style="margin-top: 0; color: #1d4ed8;">Belajar Mandiri: Mini project Todo List</h2>
+        <p style="margin-top: 0.3rem;">Mini project ini menggabungkan banyak konsep dasar menjadi satu pengalaman belajar.</p>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Tujuan Pembelajaran</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Membuat daftar tugas</li><li>Menambah dan menghapus item</li><li>Menyimpan state di browser</li></ul>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Kenapa Materi Ini Penting</h3>
+                <p style="margin: 0;">Project ini sangat bagus untuk melihat bagaimana semua konsep dasar bekerja bersama.</p>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Penjelasan Konsep</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Input user</li><li>List item</li><li>State local</li></ul>
+            </div>
+        </div>
+        <h3 style="margin-top: 1rem;">Contoh Dasar</h3>
+        <pre><code>const todos = [&#x27;Belajar JS&#x27;];
+todos.push(&#x27;Latihan DOM&#x27;);
+console.log(todos);</code></pre>
+        <h3>Contoh Kasus Nyata</h3>
+        <p>Bayangkan kamu sedang mengolah data mahasiswa, daftar belanja, catatan tugas, atau hasil pencarian film. Materi ini membantu kamu mengubah data tersebut menjadi antarmuka yang lebih berguna.</p>
+        <h3>Cara Membaca Kode</h3>
+        <ol><li>Baris ini membuat daftar tugas awal.</li><li>Baris ini menambahkan item baru.</li><li>Output yang diharapkan adalah daftar tugas dengan dua item.</li></ol>
+        <h3>Kesalahan Umum</h3>
+        <ul><li>Tidak memperbarui tampilan saat data berubah</li><li>Menghapus item dari indeks yang salah</li><li>Tidak menyimpan data saat halaman reload</li></ul>
+        <h3>Tips Debugging</h3>
+        <ul><li>Buat fitur satu per satu</li><li>Cek data sebelum menampilkannya</li><li>Jangan lupa simpan hasil kerja user</li></ul>
+        <h3>Latihan Mandiri</h3>
+        <p>Buat tombol tambah tugas sederhana.</p>
+        <h3>Mini Challenge</h3>
+        <p>Tambahkan tombol hapus untuk setiap item.</p>
+        <h3>Ringkasan</h3>
+        <p>Mini project ini menggabungkan banyak konsep dasar menjadi satu pengalaman belajar.</p>
+        <h3>Lanjut Belajar Setelah Materi Ini</h3>
+        <p>Lanjut ke Expense Tracker.</p>
+        <h3>Prediksi Output</h3>
+        <p>Coba tebak hasilnya sebelum melihat jawaban. Kalau kamu belum yakin, jalankan di console browser.</p>
+        <pre><code>const todos = [&#x27;Belajar JS&#x27;];
+todos.push(&#x27;Latihan DOM&#x27;);
+console.log(todos);</code></pre>
+    </section>
+    
+</main>
+</body>
+</html>

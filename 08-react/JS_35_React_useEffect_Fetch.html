@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React useEffect + Fetch</title>
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; margin: 0; padding: 2rem; background: #f8fafc; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
+        h1 { margin-top: 0; }
+        h2 { margin-top: 1.5rem; }
+        code, pre { background: #e2e8f0; padding: 0.15rem 0.35rem; border-radius: 0.3rem; }
+        pre { display: block; padding: 1rem; overflow-x: auto; }
+        a { color: #2563eb; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>React useEffect + Fetch</h1>
+        <p>useEffect sering dipakai untuk menjalankan efek samping, seperti mengambil data saat komponen pertama kali muncul.</p>
+        <h2>Yang dipelajari</h2>
+        <ul>
+            <li>Menjalankan kode setelah render.</li>
+            <li>Mengambil data dari API saat komponen dimuat.</li>
+            <li>Menggunakan dependency array untuk mengontrol efek.</li>
+        </ul>
+        <h2>Contoh dasar</h2>
+        <pre><code>useEffect(() => {
+  fetchData();
+}, []);</code></pre>
+        <p><a href="JS_35_React_useEffect_Fetch_Latihan.html">Lihat latihan untuk materi ini</a></p>
+    
+    <!-- MODUL-PEMULA-REVISI -->
+    <section style="margin-top: 2rem; padding: 1.4rem; border: 1px solid #dbeafe; border-radius: 1rem; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);">
+        <h2 style="margin-top: 0; color: #1d4ed8;">Belajar Mandiri: React useEffect dan fetch</h2>
+        <p style="margin-top: 0.3rem;">useEffect membuat React bisa berinteraksi dengan data eksternal.</p>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Tujuan Pembelajaran</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Menggunakan useEffect</li><li>Mengambil data API di React</li><li>Menangani loading dan error</li></ul>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Kenapa Materi Ini Penting</h3>
+                <p style="margin: 0;">Banyak aplikasi modern menampilkan data dari server. useEffect adalah cara umum untuk itu.</p>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Penjelasan Konsep</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>useEffect berjalan setelah render</li><li>fetch bisa dipakai di dalam effect</li><li>loading dan error state penting</li></ul>
+            </div>
+        </div>
+        <h3 style="margin-top: 1rem;">Contoh Dasar</h3>
+        <pre><code>import { useEffect, useState } from &#x27;react&#x27;;
+
+function Produk() {
+  const [produk, setProduk] = useState(null);
+  useEffect(() =&gt; {
+    fetch(&#x27;https://fakestoreapi.com/products/1&#x27;)
+      .then(res =&gt; res.json())
+      .then(data =&gt; setProduk(data));
+  }, []);
+  return &lt;div&gt;{produk?.title}&lt;/div&gt;;
+}</code></pre>
+        <h3>Contoh Kasus Nyata</h3>
+        <p>Bayangkan kamu sedang mengolah data mahasiswa, daftar belanja, catatan tugas, atau hasil pencarian film. Materi ini membantu kamu mengubah data tersebut menjadi antarmuka yang lebih berguna.</p>
+        <h3>Cara Membaca Kode</h3>
+        <ol><li>Baris ini membuat state untuk menyimpan data produk.</li><li>Baris ini menjalankan fetch saat komponen pertama kali tampil.</li><li>Output yang diharapkan adalah judul produk dari API yang muncul di layar.</li></ol>
+        <h3>Kesalahan Umum</h3>
+        <ul><li>Mengambil data tanpa dependency array</li><li>Lupa menampilkan loading saat data belum datang</li><li>Mengabaikan error dari fetch</li></ul>
+        <h3>Tips Debugging</h3>
+        <ul><li>Pakai dependency array agar efek tidak berjalan berulang</li><li>Tampilkan loading state saat pending</li><li>Coba API sederhana saat belajar</li></ul>
+        <h3>Latihan Mandiri</h3>
+        <p>Buat komponen yang mengambil data film dan menampilkannya.</p>
+        <h3>Mini Challenge</h3>
+        <p>Tambah loading dan pesan error saat request gagal.</p>
+        <h3>Ringkasan</h3>
+        <p>useEffect membuat React bisa berinteraksi dengan data eksternal.</p>
+        <h3>Lanjut Belajar Setelah Materi Ini</h3>
+        <p>Lanjut ke proyek React yang lebih nyata.</p>
+        <h3>Prediksi Output</h3>
+        <p>Coba tebak hasilnya sebelum melihat jawaban. Kalau kamu belum yakin, jalankan di console browser.</p>
+        <pre><code>import { useEffect, useState } from &#x27;react&#x27;;
+
+function Produk() {
+  const [produk, setProduk] = useState(null);
+  useEffect(() =&gt; {
+    fetch(&#x27;https://fakestoreapi.com/products/1&#x27;)
+      .then(res =&gt; res.json())
+      .then(data =&gt; setProduk(data));
+  }, []);
+  return &lt;div&gt;{produk?.title}&lt;/div&gt;;
+}</code></pre>
+    </section>
+    
+</main>
+</body>
+</html>

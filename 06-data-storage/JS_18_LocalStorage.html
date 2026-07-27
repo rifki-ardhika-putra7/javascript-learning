@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; margin: 0; padding: 2rem; background: #f8fafc; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
+        h1 { margin-top: 0; }
+        h2 { margin-top: 1.5rem; }
+        code, pre { background: #e2e8f0; padding: 0.15rem 0.35rem; border-radius: 0.3rem; }
+        pre { display: block; padding: 1rem; overflow-x: auto; }
+        a { color: #2563eb; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>LocalStorage</h1>
+        <p>LocalStorage memungkinkan aplikasi menyimpan data di browser sehingga tetap ada meski halaman direfresh.</p>
+        <h2>Yang dipelajari</h2>
+        <ul>
+            <li><code>setItem()</code> untuk menyimpan data.</li>
+            <li><code>getItem()</code> untuk membaca data.</li>
+            <li><code>removeItem()</code> untuk menghapus data.</li>
+        </ul>
+        <h2>Contoh dasar</h2>
+        <pre><code>localStorage.setItem('nama', 'Dina');
+console.log(localStorage.getItem('nama'));</code></pre>
+        <p><a href="Latihan_JS_18_LocalStorage.html">Lihat latihan untuk materi ini</a></p>
+    
+    <!-- MODUL-PEMULA-REVISI -->
+    <section style="margin-top: 2rem; padding: 1.4rem; border: 1px solid #dbeafe; border-radius: 1rem; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);">
+        <h2 style="margin-top: 0; color: #1d4ed8;">Belajar Mandiri: LocalStorage</h2>
+        <p style="margin-top: 0.3rem;">LocalStorage cocok untuk data sederhana yang ingin bertahan di browser.</p>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Tujuan Pembelajaran</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Menyimpan data di browser</li><li>Memahami keterbatasan localStorage</li><li>Menggunakan data yang tersimpan saat reload</li></ul>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Kenapa Materi Ini Penting</h3>
+                <p style="margin: 0;">Sangat berguna untuk catatan sederhana, preferensi, dan daftar tugas yang ingin dipertahankan.</p>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Penjelasan Konsep</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>setItem menulis data</li><li>getItem membaca data</li><li>removeItem menghapus data</li></ul>
+            </div>
+        </div>
+        <h3 style="margin-top: 1rem;">Contoh Dasar</h3>
+        <pre><code>localStorage.setItem(&#x27;nama&#x27;, &#x27;Ari&#x27;);
+console.log(localStorage.getItem(&#x27;nama&#x27;));</code></pre>
+        <h3>Contoh Kasus Nyata</h3>
+        <p>Bayangkan kamu sedang mengolah data mahasiswa, daftar belanja, catatan tugas, atau hasil pencarian film. Materi ini membantu kamu mengubah data tersebut menjadi antarmuka yang lebih berguna.</p>
+        <h3>Cara Membaca Kode</h3>
+        <ol><li>Baris ini menulis data ke browser.</li><li>Baris ini membaca kembali data tersebut.</li><li>Output yang diharapkan adalah Ari.</li></ol>
+        <h3>Kesalahan Umum</h3>
+        <ul><li>Menyimpan objek langsung tanpa stringify</li><li>Lupa memeriksa data yang ada</li><li>Menggunakan LocalStorage untuk data besar</li></ul>
+        <h3>Tips Debugging</h3>
+        <ul><li>Gunakan JSON.stringify untuk object</li><li>Coba lihat Application tab di DevTools</li><li>Simpan data yang benar-benar perlu</li></ul>
+        <h3>Latihan Mandiri</h3>
+        <p>Simpan nama pengguna di localStorage lalu tampilkan saat halaman dibuka.</p>
+        <h3>Mini Challenge</h3>
+        <p>Simpan daftar tugas lalu muat ulang saat halaman direfresh.</p>
+        <h3>Ringkasan</h3>
+        <p>LocalStorage cocok untuk data sederhana yang ingin bertahan di browser.</p>
+        <h3>Lanjut Belajar Setelah Materi Ini</h3>
+        <p>Lanjut ke CRUD Vanilla JS.</p>
+        <h3>Prediksi Output</h3>
+        <p>Coba tebak hasilnya sebelum melihat jawaban. Kalau kamu belum yakin, jalankan di console browser.</p>
+        <pre><code>localStorage.setItem(&#x27;nama&#x27;, &#x27;Ari&#x27;);
+console.log(localStorage.getItem(&#x27;nama&#x27;));</code></pre>
+    </section>
+    
+</main>
+</body>
+</html>

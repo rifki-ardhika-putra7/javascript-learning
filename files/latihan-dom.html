@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge DOM Basic</title>
+    <script src="script1.js" defer></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 16px;
+        }
+
+        section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        button {
+            cursor: pointer;
+            margin: 2px;
+        }
+
+        input {
+            padding: 6px;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        /* class dipakai di Section 2 (classList add/remove/toggle) */
+        .highlight {
+            background: yellow;
+        }
+
+        /* class dipakai di Section 6 (toggle selesai) */
+        .selesai {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        /* kotak buat latihan mouseenter/mouseleave (Section 3) */
+        #kotakHover {
+            width: 200px;
+            height: 80px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== SECTION 1 & 2: Selecting + Ubah Konten/Style ====== -->
+    <section>
+        <h1 id="judul">Judul Awal</h1>
+        <p class="teks">Paragraf teks pertama.</p>
+        <p class="teks">Paragraf teks kedua.</p>
+        <p class="teks">Paragraf teks ketiga.</p>
+        <button id="btn1">Klik Aku (Section 3)</button>
+    </section>
+
+    <!-- ====== SECTION 3: Event Listener ====== -->
+    <section>
+        <h2>Section 3 — Events</h2>
+        <input id="inputNama" placeholder="Ketik nama...">
+        <p id="preview">Preview real-time muncul di sini...</p>
+        <div id="kotakHover">Arahkan mouse ke sini</div>
+    </section>
+
+    <!-- ====== SECTION 4: Create & Delete Element ====== -->
+    <section>
+        <h2>Section 4 — Buat & Hapus Elemen</h2>
+        <input id="itemBaru" placeholder="Nama item...">
+        <button id="tambahBtn">Tambah</button>
+        <ul id="listBelanja"></ul>
+        <p id="totalItem">Total item: 0</p>
+    </section>
+
+    <!-- ====== SECTION 5: Loop ke DOM ====== -->
+    <section>
+        <h2>Section 5 — Loop Array ke DOM</h2>
+        <button id="urutBtn">Urutkan dari Termurah</button>
+        <ul id="listProduk"></ul>
+    </section>
+
+    <!-- ====== SECTION 6: FINAL BOSS — To-Do List ====== -->
+    <section>
+        <h2>Section 6 — To-Do List</h2>
+        <input id="todoInput" placeholder="Tulis to-do...">
+        <button id="todoAddBtn">Tambah</button>
+        <button id="hapusSelesaiBtn">Hapus Semua yang Selesai</button>
+        <ul id="todoList"></ul>
+        <p id="todoCounter">0 selesai dari 0 total</p>
+    </section>
+
+    <!-- script.js ditaruh sebelum </body> biar DOM udah kebentuk pas JS jalan -->
+</body>
+
+</html>

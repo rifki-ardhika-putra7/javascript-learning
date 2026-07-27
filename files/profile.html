@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Welcome to My Profile</h1>
+            <small>Rifki Ardhika Putra.</small>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#About">About</a>
+                <a href="#Skill">Skill</a>
+                <a href="#Kontak">Contact</a>
+            </nav>
+        </header>
+        <section id="About">
+            <article>
+                nama gw rifki, umur gw 21 tahun, dan sekarang gw sedang belajar buat menuju software engginering dari 0<br> 
+                gw mulai belajar dari dasar internet, lalu <mark><abbr title="Hyper Text Markup Language">HTML</abbr>, css dan javascript.</mark><br>
+                sekarang gw masih di javascript dengan materi DOM, walaupun begitu banyak materi dasar yang masih belum gw pahami lagi.<br>
+                <q>Hidup tenang, bebas napas, nasi padang, kopi panas</q><br></article>
+            </article>
+        </section>
+
+        <section id="Skill">
+            <ul>
+                <li>Web Development</li>
+                <li>Data science</li>
+                <li>Data engginering</li>
+                <li>Machine learning</li>
+            </ul>
+        </section>
+
+        <section id="Riwayat">
+            <ol>
+                <li>Sdn 93 Sungai Abang</li>
+                <li>SMPN 2 Sarolangun</li>
+                <li>SMKN 4 Sarolangun</li>
+            </ol>
+            <dl>
+                <dt>Machine learning</dt>
+                <dd>pembelajaran mesin</dd>
+
+                <dt>HTML</dt>
+                <dd>Bahasa markah standar untuk membuat halaman web.</dd>
+                
+                <dt>CSS</dt>
+                <dd>Bahasa lembar gaya yang digunakan untuk mengatur tampilan dokumen.</dd>
+            </dl>
+        </section>
+
+        <section id="Kontak">
+            <table border="1">
+                <tr>
+                    <th>Email</th>
+                    <th>Github</th>
+                    <th>Discord</th>
+                </tr>
+                <tr>
+                    <td>Rfkikay@gmail.com</td>
+                    <td>rifki ardhika putra</td>
+                    <td>Tweezy2099</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="jadwalharian">
+            <h2>Jadwal Harian</h2>
+            <table border="2"> 
+                <tr>
+                    <th colspan="2">Jadwal Harian</th>
+                    <th>Jam</th>
+                </tr>
+                <tr>
+                    <td>Senin</td>
+                    <td>HTML, CSS</td>
+                    <td rowspan="2">20:00 WIB</td>
+                </tr>
+                <tr>
+                    <td>Selasa</td>
+                    <td>Javascript</td>
+                </tr>
+            </table>
+        </section>
+        <section id="video">
+            <video width="320" height="240"controls>
+                <source src="clos3r-video.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <footer>&copy web by rifki ardhika putra</footer>
+        <section id="form">
+            <form action="">
+                <fieldset>
+                    <legend>Isi profile anda</legend>
+                    <label for="username">Nama anda</label><br>
+                    <input type="text" name="username" id="usrname"><br>
+                    <label for="email">Email anda</label><br>
+                    <input type="email" name="email" id="email"><br>
+                    <label for="pesan">Pesan</label><br>
+                    <textarea name="pesan" id="pesan" rows="5"></textarea><br>
+                    <p>Jenis kelamin</p>
+                    <input type="radio" id="laki" name="jk" value="laki laki">
+                    <label for="laki laki">laki laki</label><br>
+                    <input type="radio" id="perempuan" name="jk" value="perempuan">
+                    <label for="perempuan">perempuan</label><br>
+                    <input type="checkbox" name="aggre" id="aggre">
+                    <label for="aggre">Setuju dihubungi lewat email</label><br>
+                    <label for="cars">Choose a car:</label>
+                    <select id="cars" name="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select><br>
+                    <label for="file">Upload CV</label>
+                    <input type="file" name="" id="">
+                    <button type="submit">Kirim</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

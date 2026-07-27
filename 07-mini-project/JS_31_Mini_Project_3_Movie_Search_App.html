@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project 3: Movie Search App</title>
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; margin: 0; padding: 2rem; background: #f8fafc; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
+        h1 { margin-top: 0; }
+        h2 { margin-top: 1.5rem; }
+        code, pre { background: #e2e8f0; padding: 0.15rem 0.35rem; border-radius: 0.3rem; }
+        pre { display: block; padding: 1rem; overflow-x: auto; }
+        a { color: #2563eb; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Mini Project 3: Movie Search App</h1>
+        <p>Movie search app menggabungkan input pengguna, pencarian kata kunci, dan hasil data dari API.</p>
+        <h2>Konsep yang diterapkan</h2>
+        <ul>
+            <li>Memproses kata kunci pengguna.</li>
+            <li>Memanggil API dengan fetch.</li>
+            <li>Menampilkan hasil ke halaman.</li>
+        </ul>
+        <h2>Contoh logika</h2>
+        <pre><code>const keyword = 'batman';
+fetch(`https://example.com/search?q=${keyword}`);</code></pre>
+        <p><a href="JS_31_Mini_Project_3_Movie_Search_App_Latihan.html">Lihat latihan untuk materi ini</a></p>
+    
+    <!-- MODUL-PEMULA-REVISI -->
+    <section style="margin-top: 2rem; padding: 1.4rem; border: 1px solid #dbeafe; border-radius: 1rem; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);">
+        <h2 style="margin-top: 0; color: #1d4ed8;">Belajar Mandiri: Mini project Movie Search App</h2>
+        <p style="margin-top: 0.3rem;">Movie search app menggabungkan banyak konsep interaksi dan data.</p>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Tujuan Pembelajaran</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Mencari data film</li><li>Menampilkan hasil pencarian</li><li>Menangani loading dan error</li></ul>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Kenapa Materi Ini Penting</h3>
+                <p style="margin: 0;">Aplikasi pencarian film adalah contoh klasik untuk data async dan UI yang dinamis.</p>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Penjelasan Konsep</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Input pencarian</li><li>Request ke API</li><li>Rendering hasil</li></ul>
+            </div>
+        </div>
+        <h3 style="margin-top: 1rem;">Contoh Dasar</h3>
+        <pre><code>const keyword = &#x27;avengers&#x27;;
+console.log(`Mencari film: ${keyword}`);</code></pre>
+        <h3>Contoh Kasus Nyata</h3>
+        <p>Bayangkan kamu sedang mengolah data mahasiswa, daftar belanja, catatan tugas, atau hasil pencarian film. Materi ini membantu kamu mengubah data tersebut menjadi antarmuka yang lebih berguna.</p>
+        <h3>Cara Membaca Kode</h3>
+        <ol><li>Baris ini menyiapkan kata kunci pencarian.</li><li>Output yang diharapkan adalah teks pencarian yang muncul di console.</li></ol>
+        <h3>Kesalahan Umum</h3>
+        <ul><li>Tidak mengirim keyword dengan benar</li><li>Lupa menampilkan pesan saat hasil kosong</li><li>Tidak menangani error network</li></ul>
+        <h3>Tips Debugging</h3>
+        <ul><li>Beri delay kecil untuk pencarian</li><li>Tampilkan pesan jika tidak ada hasil</li><li>Coba API publik untuk ujicoba</li></ul>
+        <h3>Latihan Mandiri</h3>
+        <p>Tampilkan satu film dari kata kunci sederhana.</p>
+        <h3>Mini Challenge</h3>
+        <p>Buat halaman hasil pencarian dengan card film.</p>
+        <h3>Ringkasan</h3>
+        <p>Movie search app menggabungkan banyak konsep interaksi dan data.</p>
+        <h3>Lanjut Belajar Setelah Materi Ini</h3>
+        <p>Lanjut ke weather app.</p>
+        <h3>Prediksi Output</h3>
+        <p>Coba tebak hasilnya sebelum melihat jawaban. Kalau kamu belum yakin, jalankan di console browser.</p>
+        <pre><code>const keyword = &#x27;avengers&#x27;;
+console.log(`Mencari film: ${keyword}`);</code></pre>
+    </section>
+    
+</main>
+</body>
+</html>

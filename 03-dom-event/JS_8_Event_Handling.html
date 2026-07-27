@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 8: Event Handling</title>
+    <style>
+        body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #f7f9fc; color: #0f172a; }
+        .page { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        h1 { color: #1d4ed8; }
+        .card { background: white; border-radius: 1rem; border: 1px solid #cbd5e1; padding: 1.5rem; box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08); }
+        pre { background: #e2e8f0; border-radius: 0.85rem; padding: 1rem; overflow-x: auto; }
+        a { color: #2563eb; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <h1>JS 8: Event Handling</h1>
+        <p>Event adalah peristiwa pengguna yang dapat ditangani untuk membuat aplikasi web menjadi interaktif.</p>
+        <div class="card">
+            <h2>Menangani klik</h2>
+            <pre><code>const tombol = document.querySelector('#tombol');
+
+tombol.addEventListener('click', function() {
+  alert('Tombol diklik!');
+});</code></pre>
+        </div>
+        <div class="card" style="margin-top: 1rem;">
+            <h2>Input dan submit</h2>
+            <pre><code>const input = document.querySelector('#nama');
+input.addEventListener('input', function(event) {
+  console.log(event.target.value);
+});
+
+const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log('Form dikirim');
+});</code></pre>
+        </div>
+        <div class="card" style="margin-top: 1rem;">
+            <h2>Event object</h2>
+            <pre><code>document.body.addEventListener('keydown', (event) => {
+  console.log('Tombol:', event.key);
+});</code></pre>
+            <p>Event object memberi informasi seperti target, key, dan tipe event.</p>
+        </div>
+        <p style="margin-top: 1.5rem;"><a href="JS_00_Daftar_Materi.html">← Kembali ke daftar materi</a></p>
+    
+    <!-- MODUL-PEMULA-REVISI -->
+    <section style="margin-top: 2rem; padding: 1.4rem; border: 1px solid #dbeafe; border-radius: 1rem; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);">
+        <h2 style="margin-top: 0; color: #1d4ed8;">Belajar Mandiri: Event handling</h2>
+        <p style="margin-top: 0.3rem;">Event membuat aplikasi terasa responsif.</p>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Tujuan Pembelajaran</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>Menambahkan event listener</li><li>Memahami alur event</li><li>Membuat interaksi sederhana</li></ul>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Kenapa Materi Ini Penting</h3>
+                <p style="margin: 0;">Kebanyakan aplikasi web interaktif bekerja lewat event. Tanpa event, halaman hanya tampil statis.</p>
+            </div>
+            <div>
+                <h3 style="margin: 0 0 0.45rem;">Penjelasan Konsep</h3>
+                <ul style="margin: 0; padding-left: 1.2rem;"><li>addEventListener menangkap event</li><li>event target memberi tahu elemen yang dipicu</li><li>satu elemen bisa punya banyak event</li></ul>
+            </div>
+        </div>
+        <h3 style="margin-top: 1rem;">Contoh Dasar</h3>
+        <pre><code>const tombol = document.querySelector(&#x27;button&#x27;);
+tombol.addEventListener(&#x27;click&#x27;, () =&gt; {
+  alert(&#x27;Tombol diklik&#x27;);
+});</code></pre>
+        <h3>Contoh Kasus Nyata</h3>
+        <p>Bayangkan kamu sedang mengolah data mahasiswa, daftar belanja, catatan tugas, atau hasil pencarian film. Materi ini membantu kamu mengubah data tersebut menjadi antarmuka yang lebih berguna.</p>
+        <h3>Cara Membaca Kode</h3>
+        <ol><li>Baris ini memilih tombol.</li><li>Baris ini menambahkan aksi saat tombol diklik.</li><li>Output yang diharapkan adalah popup muncul saat tombol ditekan.</li></ol>
+        <h3>Kesalahan Umum</h3>
+        <ul><li>Lupa menambahkan listener</li><li>Menggunakan onclick padahal addEventListener lebih fleksibel</li><li>Tidak memeriksa elemen target</li></ul>
+        <h3>Tips Debugging</h3>
+        <ul><li>Pakai event delegation saat elemen banyak</li><li>Jangan menumpuk event secara acak</li><li>Coba event klik, input, dan submit</li></ul>
+        <h3>Latihan Mandiri</h3>
+        <p>Buat tombol yang mengubah warna latar belakang halaman.</p>
+        <h3>Mini Challenge</h3>
+        <p>Buat form sederhana yang menampilkan pesan saat tombol submit diklik.</p>
+        <h3>Ringkasan</h3>
+        <p>Event membuat aplikasi terasa responsif.</p>
+        <h3>Lanjut Belajar Setelah Materi Ini</h3>
+        <p>Lanjut ke asynchronous dan fetch.</p>
+        <h3>Prediksi Output</h3>
+        <p>Coba tebak hasilnya sebelum melihat jawaban. Kalau kamu belum yakin, jalankan di console browser.</p>
+        <pre><code>const tombol = document.querySelector(&#x27;button&#x27;);
+tombol.addEventListener(&#x27;click&#x27;, () =&gt; {
+  alert(&#x27;Tombol diklik&#x27;);
+});</code></pre>
+    </section>
+    
+</main>
+</body>
+</html>
