@@ -242,12 +242,16 @@ if (indexMouse !== -1) {
 // Latihan 1
 // Buat array daftarWarna berisi 4 nama warna.
 // Tampilkan elemen pertama dan elemen terakhir (pakai length - 1).
-
+let daftarWarna = ["merah", "kuning", "hijau", "biru"];
+console.log(daftarWarna[0]);
+console.log(daftarWarna[daftarWarna.length - 1]);
 
 // Latihan 2
 // Buat array daftarAngka = [5, 10, 15, 20, 25].
 // Tampilkan length dan elemen di index ke-2.
-
+let daftarAngka = [5, 10, 15, 20, 25];
+console.log(daftarAngka.length);
+console.log(daftarAngka[2]);
 
 // Latihan 3
 // Mulai dari let isiDompet = ["ktp", "uang"].
@@ -255,12 +259,19 @@ if (indexMouse !== -1) {
 // - unshift "kunci"
 // - pop 1 kali
 // Tampilkan isiDompet di akhir.
-
+let isiDompet = ["ktp", "uang"];
+isiDompet.push("kartu debit");
+isiDompet.unshift("kunci");
+isiDompet.pop(); // pop() tidak butuh argumen — selalu hapus elemen terakhir
+console.log(isiDompet);
 
 // Latihan 4
 // Buat array daftarSuhuKota = [27, 31, 29, 34, 30].
 // Pakai for...of untuk menampilkan tiap suhu.
-
+let daftarSuhuKota = [27, 31, 29, 34, 30];
+for (const item of daftarSuhuKota) {
+  console.log(item);
+}
 
 // --- SEDANG ---
 
@@ -268,13 +279,23 @@ if (indexMouse !== -1) {
 // Masih dari daftarSuhuKota (atau buat ulang).
 // Hitung totalSuhuKota pakai loop, lalu rataRataSuhuKota.
 // Tampilkan keduanya.
-
+let totalSuhuKota = 0;
+for (const item of daftarSuhuKota) {
+  totalSuhuKota += item;
+}
+let rataRataSuhuKota = totalSuhuKota / daftarSuhuKota.length;
+console.log(`Total suhu kota : ${totalSuhuKota}`);
+console.log(`Rata rata suhu kota : ${rataRataSuhuKota}`)
 
 // Latihan 6
 // Buat array daftarMenuKafe = ["kopi", "teh", "susu", "matcha"].
 // Cek apakah "teh" ada (includes).
 // Tampilkan index "matcha" (indexOf).
-
+let daftarMenuKafe = ["kopi", "teh", "susu", "matcha"];
+let adaTeh = daftarMenuKafe.includes("teh");
+console.log(adaTeh);
+let indexMatcha = daftarMenuKafe.indexOf("matcha");
+console.log(indexMatcha);
 
 // Latihan 7
 // Buat array skorLatihan = [60, 75, 90, 55, 80, 100].
@@ -282,12 +303,24 @@ if (indexMouse !== -1) {
 // - tampilkan hanya skor >= 75
 // - hitung berapa yang lolos
 // Tampilkan jumlah lolos di akhir.
+let skorLatihan = [60, 75, 90, 55, 80, 100];
+let jmlLolos = 0;
+for (const item of skorLatihan) {
+  if (item >= 75) {
+    console.log("Skor Lolos:", item);
+    jmlLolos++;
+  }
+}
+console.log("Jumlah Total Lolos:", jmlLolos);
 
 
 // Latihan 8
 // Buat fungsi hitungJumlahElemen(daftarData) yang return daftarData.length.
 // Uji dengan ["a", "b", "c", "d"].
-
+function hitungJumlahElemen(daftarData) {
+  return daftarData.length;
+}
+console.log(hitungJumlahElemen(["a", "b", "c", "d"])); // 4
 
 // --- SULIT ---
 
@@ -295,7 +328,16 @@ if (indexMouse !== -1) {
 // Buat fungsi cariNilaiTerbesar(daftarAngka).
 // Return angka terbesar. Jangan pakai Math.max.
 // Uji: [3, 9, 1, 12, 7] → 12
-
+function cariNilaiTerbesar(daftarAngka) {
+  let angkaTerbesar = daftarAngka[0]; // mulai dari elemen pertama (aman untuk angka negatif)
+  for (const item of daftarAngka) {
+    if (item > angkaTerbesar) {
+      angkaTerbesar = item;
+    }
+  }
+  return angkaTerbesar;
+}
+console.log(cariNilaiTerbesar([3, 9, 1, 12, 7])); // 12
 
 // Latihan 10
 // Buat fungsi hitungRataTanpaNilaiNol(daftarNilai).
@@ -303,7 +345,24 @@ if (indexMouse !== -1) {
 // - hitung rata-rata dari nilai yang tersisa
 // - jika semua 0 / array kosong → return 0
 // Uji: [80, 0, 90, 70, 0] → rata-rata dari 80, 90, 70
-
+function hitungRataTanpaNilaiNol(daftarNilai) {
+  let total = 0;
+  let jumlahDataValid = 0;
+  for (const item of daftarNilai) {
+    if (item === 0) {
+      continue;
+    }
+    total += item;
+    jumlahDataValid++;
+  }
+  if (jumlahDataValid === 0) {
+    return 0;
+  }
+  return total / jumlahDataValid;
+}
+console.log(hitungRataTanpaNilaiNol([80, 0, 90, 70, 0])); // 80
+console.log(hitungRataTanpaNilaiNol([0, 0, 0]));          // 0
+console.log(hitungRataTanpaNilaiNol([]));                 // 0
 
 // Latihan 11 (TANTANGAN)
 // Sistem "antrian kasir mini":
@@ -323,3 +382,36 @@ if (indexMouse !== -1) {
 // - layani 1 orang (harus "Rina")
 // - tampilkan antrian sisa
 // - tampilkan jumlah orang tersisa (length)
+let antrianKasir = ["Rina", "Budi", "Siti"];
+function tambahAntrian(daftarAntrian, namaBaru) {
+  daftarAntrian.push(namaBaru);
+  return daftarAntrian;
+}
+function layaniAntrian(daftarAntrian) {
+  if (daftarAntrian.length === 0) {
+    return null;
+  }
+  return daftarAntrian.shift();
+}
+function tampilkanAntrian(daftarAntrian) {
+  if (daftarAntrian.length === 0) {
+    console.log("Antrian Kosong.");
+    return;
+  }
+  for (let i = 0; i < daftarAntrian.length; i++) {
+    console.log(`${i + 1}. ${daftarAntrian[i]}`);
+  }
+}
+// --- ALUR UJI ---
+console.log("=== ANTRIAN AWAL ===");
+tampilkanAntrian(antrianKasir);
+console.log("\n=== TAMBAH ANDI ===");
+tambahAntrian(antrianKasir, "Andi");
+tampilkanAntrian(antrianKasir);
+console.log("\n=== MELAYANI 1 ORANG ===");
+let orangDilayani = layaniAntrian(antrianKasir);
+console.log(`Sedang melayani: ${orangDilayani}`);
+console.log("\n=== ANTRIAN SISA ===");
+tampilkanAntrian(antrianKasir);
+console.log("\n=== JUMLAH ORANG TERSISA ===");
+console.log(`Total sisa di antrian: ${antrianKasir.length} orang`);
