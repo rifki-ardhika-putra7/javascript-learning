@@ -1,9 +1,10 @@
 // ============================================================
-// 📘 MATERI 10 - OBJECT DASAR
+// 📘 MATERI 11 - OBJECT DASAR
 // ============================================================
 // Lanjut dari: 01-array-dasar.js
-// Jalankan: node 02-object-dasar.js
+// Jalankan: node 03-object-dasar.js
 // Folder: 02-array-object/
+// ============================================================
 
 // ============================================================
 // 🎯 TUJUAN PEMBELAJARAN
@@ -96,13 +97,13 @@ const profilSiswa = {
   isLulus: true,
 };
 
-console.log(profilSiswa.namaLengkap);     // Rina Putri
-console.log(profilSiswa["kelasSiswa"]);   // 12 IPA
-console.log(profilSiswa.umurSiswa);       // 17
+console.log(profilSiswa.namaLengkap); // Rina Putri
+console.log(profilSiswa["kelasSiswa"]); // 12 IPA
+console.log(profilSiswa.umurSiswa); // 17
 
 // --- MENAMBAH & MENGUBAH ---
-profilSiswa.kotaAsal = "Surabaya";  // tambah
-profilSiswa.umurSiswa = 18;         // ubah
+profilSiswa.kotaAsal = "Surabaya"; // tambah
+profilSiswa.umurSiswa = 18; // ubah
 console.log(profilSiswa);
 
 // --- MENGHAPUS ---
@@ -260,8 +261,9 @@ tampilkanKartuAnggota(anggotaGym);
 // ============================================================
 // 🏋️ LATIHAN
 // ============================================================
+
 // Kerjakan di bawah ini. Jangan hardcode hasil — pakai kode.
-// Jalankan: node 02-object-dasar.js
+// Jalankan: node 03-object-dasar.js
 //
 // ⚠️ PENTING: Gunakan nama variabel UNIK di setiap latihan.
 // Hindari nama yang sudah dipakai di materi di atas.
@@ -273,10 +275,10 @@ tampilkanKartuAnggota(anggotaGym);
 //   judul, penulis, tahunTerbit
 // Tampilkan judul dan penulis pakai dot notation.
 const bukuFavorit = {
-  judul : "Laut Bercerita",
+  judul: "Laut Bercerita",
   penulis: "Leila S. Chudori",
-  tahunTerbit : 2017
-}
+  tahunTerbit: 2017,
+};
 console.log(bukuFavorit.judul);
 console.log(bukuFavorit["penulis"]);
 console.log(bukuFavorit.tahunTerbit);
@@ -290,10 +292,10 @@ console.log(bukuFavorit.tahunTerbit);
 const profilGamer = {
   username: "Kay",
   level: 1,
-  isOnline: true
-}
-profilGamer.guild = "Dragon Force";  // tambah
-profilGamer.level += 1;         // ubah
+  isOnline: true,
+};
+profilGamer.guild = "Dragon Force"; // tambah
+profilGamer.level += 1; // ubah
 console.log(profilGamer);
 
 // Latihan 3
@@ -304,8 +306,8 @@ console.log(profilGamer);
 const kontakTeman = {
   nama: "Drizzy",
   noHp: 82298765245,
-  kota : "Toronto"
-}
+  kota: "Toronto",
+};
 delete kontakTeman.noHp;
 console.log(kontakTeman);
 
@@ -315,12 +317,12 @@ console.log(kontakTeman);
 // Tampilkan kota dari nested object.
 const alamatKirim = {
   penerima: "Kay",
-  detail : {
+  detail: {
     jalan: "Jl raya x, jalan y",
     kota: "X",
-    kodePos : 234567
-  }
-}
+    kodePos: 234567,
+  },
+};
 console.log(alamatKirim.detail.kota);
 
 // --- SEDANG ---
@@ -333,7 +335,9 @@ console.log(alamatKirim.detail.kota);
 function formatKartuProduk(produk) {
   return `${produk.namaProduk} - Rp${produk.hargaProduk}`;
 }
-console.log(formatKartuProduk({ namaProduk: "Mouse", hargaProduk: 150000 }));
+console.log(
+  formatKartuProduk({ namaProduk: "Mouse", hargaProduk: 150000 })
+);
 
 // Latihan 6
 // Buat fungsi apakahStokAman(barang)
@@ -355,21 +359,24 @@ console.log(apakahStokAman({ namaBarang: "Pena", stokBarang: 4 }));
 // Tiap film: judulFilm, tahunFilm, ratingFilm
 // Loop for...of, tampilkan: "Judul (tahun) - rating"
 const daftarFilm = [
-  {judulFilm: "Avengers Endgame", tahunFilm: 2019, ratingFilm: 9.5},
-  {judulFilm: "Spiderman No Way Home", tahunFilm: 2022, ratingFilm: 9.5},
-  {judulFilm: "ThunderBolt", tahunFilm: 2024, ratingFilm: 9.5 },
-  {judulFilm: "Avenger Infinity War", tahunFilm: 2019, ratingFilm : 9.7}
-]
+  { judulFilm: "Avengers Endgame", tahunFilm: 2019, ratingFilm: 9.5 },
+  { judulFilm: "Spiderman No Way Home", tahunFilm: 2022, ratingFilm: 9.5 },
+  { judulFilm: "ThunderBolt", tahunFilm: 2024, ratingFilm: 9.5 },
+  { judulFilm: "Avenger Infinity War", tahunFilm: 2019, ratingFilm: 9.7 },
+];
 for (const filmItem of daftarFilm) {
-  console.log(`${filmItem.judulFilm} (${filmItem.tahunFilm}) - ${filmItem.ratingFilm}`);
+  console.log(
+    `${filmItem.judulFilm} (${filmItem.tahunFilm}) - ${filmItem.ratingFilm}`
+  );
 }
+
 // Latihan 8
 // Dari daftarFilm di atas, hitung berapa film yang ratingFilm >= 8.
 // Tampilkan jumlahnya.
 let totalFilmRating = 0;
 for (const filmItem of daftarFilm) {
   if (filmItem.ratingFilm >= 8) {
-    totalFilmRating ++
+    totalFilmRating++;
   }
 }
 console.log("Jumlah Film dengan rating >= 8 :", totalFilmRating);
@@ -392,11 +399,10 @@ function cariProdukByNama(daftarProduk, namaDicari) {
 const gudangKecil = [
   { nama: "Laptop", harga: 8000000 },
   { nama: "Mouse", harga: 150000 },
-  { nama: "Keyboard", harga: 300000 }
+  { nama: "Keyboard", harga: 300000 },
 ];
 console.log(cariProdukByNama(gudangKecil, "Mouse"));
 console.log(cariProdukByNama(gudangKecil, "Monitor"));
-
 
 // Latihan 10
 // Buat fungsi hitungTotalBelanja(daftarItem)
@@ -406,7 +412,7 @@ console.log(cariProdukByNama(gudangKecil, "Monitor"));
 function hitungTotalBelanja(daftarItem) {
   let total = 0;
   for (let item of daftarItem) {
-    total += (item.harga * item.qty);
+    total += item.harga * item.qty;
   }
   return total;
 }
@@ -416,6 +422,7 @@ console.log(
     { nama: "celana", harga: 20000, qty: 2 },
   ])
 );
+
 // Latihan 11 (TANTANGAN)
 // Sistem "profil siswa + rapor singkat"
 // Data:
@@ -437,7 +444,7 @@ console.log(
 const siswaRapor = {
   nama: "Siti",
   kelas: "11 IPA",
-  nilai: { matematika: 80, fisika: 70, biologi: 90 }
+  nilai: { matematika: 80, fisika: 70, biologi: 90 },
 };
 function hitungRataRapor(dataSiswa) {
   const n = dataSiswa.nilai;
@@ -470,3 +477,64 @@ function tampilkanRapor(dataSiswa) {
   console.log(`-------------------`);
 }
 tampilkanRapor(siswaRapor);
+
+// ============================================================
+// 🌱 LANJUTAN: OBJECT KEYS / VALUES / ENTRIES
+// ============================================================
+// (Ini bagian yang sebelumnya ada di materi terpisah)
+
+// Penjelasan:
+// - Object.keys(obj) -> array key
+// - Object.values(obj) -> array value
+// - Object.entries(obj) -> array [key, value] (paling nyaman untuk loop)
+
+const profil = { nama: "Rina", umur: 20, kota: "Bandung" };
+
+console.log("\n--- Lanjutan: keys/values/entries ---");
+console.log("keys:", Object.keys(profil));
+console.log("values:", Object.values(profil));
+console.log("entries:", Object.entries(profil));
+
+console.log("\n--- Loop entries ---");
+for (const [k, v] of Object.entries(profil)) {
+  console.log(`${k} = ${v}`);
+}
+
+// Latihan:
+const siswa1 = { nama: "Siti", kelas: "11 IPA", nilai: 88 };
+console.log("\n--- Latihan keys/values (1) ---");
+console.log("Jumlah properti:", Object.keys(siswa1).length);
+console.log("Semua key:", Object.keys(siswa1));
+console.log("Semua value:", Object.values(siswa1));
+
+const kartu = { item: "Mouse", harga: 150000, qty: 2 };
+console.log("\n--- Latihan keys/values (2) ---");
+const daftarString = Object.entries(kartu).map(([kk, vv]) => `${kk}: ${vv}`);
+console.log(daftarString);
+
+function formatObj(obj) {
+  return Object.entries(obj).map(([kk, vv]) => `${kk} = ${vv}`);
+}
+console.log("\n--- Latihan keys/values (3) ---");
+console.log(formatObj({ a: 1, b: 2, c: 3 }));
+
+function cariKeyByValue(obj, target) {
+  const ketemu = Object.entries(obj).find(([_, value]) => value === target);
+  return ketemu ? ketemu[0] : null;
+}
+console.log("\n--- Latihan keys/values (4) ---");
+const dataBarang = { laptop: 8000000, mouse: 150000, keyboard: 300000 };
+console.log("Key untuk 150000:", cariKeyByValue(dataBarang, 150000)); // mouse
+console.log("Key untuk 999:", cariKeyByValue(dataBarang, 999)); // null
+
+const nilaiSiswa = { matematika: 80, fisika: 70, biologi: 90 };
+console.log("\n--- Latihan keys/values (5) ---");
+for (const [mapel, nilai] of Object.entries(nilaiSiswa)) {
+  console.log(`${mapel}: ${nilai}`);
+}
+const daftarNilai = Object.values(nilaiSiswa);
+let totalNilai = 0;
+for (const n of daftarNilai) totalNilai += n;
+const rataRata = daftarNilai.length === 0 ? 0 : totalNilai / daftarNilai.length;
+console.log("Rata-rata:", rataRata.toFixed(1));
+
